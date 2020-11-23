@@ -1,0 +1,13 @@
+.ext_div{
+    width: 100%;
+    height: 100%;
+    margin-top: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imgstyle{
+    width: auto;
+    height: 40vh;
+    margin-bottom: 3vh;
+}
