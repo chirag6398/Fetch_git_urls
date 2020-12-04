@@ -1,4 +1,7 @@
 .main_div{
   position:relative  ;
-  top:8vh;
+  /* top:14%; */
+}
+.ext_div{
+  height: 100vh;
 }

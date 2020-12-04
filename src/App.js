@@ -27,14 +27,14 @@ export default class App extends Component {
   stateHandler = (repo_Name) => {
     this.setState({ userName: repo_Name, repoUrls: [], projectName: [], avatar: "" });
 
-   
+
 
 
     axios.get(`https://api.github.com/users/${repo_Name}/repos?per_page=5&sort=created:asc`)
       .then((res) => {
         res.data.map((val) => {
           this.setState(() => {
-           
+
             return {
               repoUrls: [...this.state.repoUrls, val.git_url],
               projectName: [...this.state.projectName, val.name]
@@ -42,7 +42,7 @@ export default class App extends Component {
           })
         });
         this.setState({ avatar: res.data[0].owner.avatar_url });
-        
+
       }).catch((err) => {
         console.log(err)
       });
@@ -52,23 +52,23 @@ export default class App extends Component {
 
   render() {
     return (
-     
-        <div ref={this.vantaRef}  >
-        <div >
-        <Fform repoHandler={this.stateHandler} />
-    <div className="main_div">
-    <Avatar url={this.state.avatar}
-          user={this.state.userName}
-        />
-        <Repourl repourls={this.state.repoUrls}
-          ProjectName={this.state.projectName}
-        />
-    </div>
-      
-    </div>
-    </div>
-       
-     
+
+      <div ref={this.vantaRef} className="ext_div"  >
+        
+          <Fform repoHandler={this.stateHandler} />
+          <div className="main_div">
+            <Avatar url={this.state.avatar}
+              user={this.state.userName}
+            />
+            <Repourl repourls={this.state.repoUrls}
+              ProjectName={this.state.projectName}
+            />
+          
+
+        </div>
+      </div>
+
+
     )
   }
 }
