@@ -56,7 +56,7 @@ export default class App extends Component {
         <div ref={this.vantaRef}  >
         <div >
         <Fform repoHandler={this.stateHandler} />
-    <div style={{position:"relative",top:"8vh"}}>
+    <div className="main_div">
     <Avatar url={this.state.avatar}
           user={this.state.userName}
         />
