@@ -5,11 +5,11 @@ const Repourl = (props) => {
     var urls = null;
 
     urls = props.repourls.map((val, index) => {
-        return (<>
-            <table className="table" key={index}>
+        return (<><div key={index}>
+            <table className="table" >
                 {(index === 0) ?
-                    <thead className="thead-dark" key={index+3}>
-                        <tr key={index+4}>
+                    <thead className="thead-dark" >
+                        <tr >
                             <th scope="col">S.No.</th>
 
                             <th scope="col">Git-Repo-Url</th>
@@ -17,14 +17,15 @@ const Repourl = (props) => {
                         </tr>
                     </thead> : null}
 
-                <tbody key={index+1}>
-                    <tr key={index+2}>
+                <tbody >
+                    <tr >
                         <th scope="row">{index}</th>
                         <td>{val}</td>
                         <td>{props.ProjectName[index]}</td>
                     </tr>
                 </tbody>
             </table>
+        </div>
         </>)
     })
 
