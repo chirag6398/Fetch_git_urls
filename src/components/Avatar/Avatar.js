@@ -8,7 +8,7 @@ export default function Avatar(props) {
     return (
         <div className={avatarstyle.ext_div}>
             <div >
-                <img className={avatarstyle.imgstyle} src={props.url}></img>
+                <img className={avatarstyle.imgstyle} src={props.url} alt="..."></img>
                 {userName}
             </div>
         </div>

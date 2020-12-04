@@ -8,8 +8,8 @@ const Repourl = (props) => {
         return (<>
             <table className="table" key={index}>
                 {(index === 0) ?
-                    <thead className="thead-dark">
-                        <tr>
+                    <thead className="thead-dark" key={index+3}>
+                        <tr key={index+4}>
                             <th scope="col">S.No.</th>
 
                             <th scope="col">Git-Repo-Url</th>
@@ -17,8 +17,8 @@ const Repourl = (props) => {
                         </tr>
                     </thead> : null}
 
-                <tbody>
-                    <tr>
+                <tbody key={index+1}>
+                    <tr key={index+2}>
                         <th scope="row">{index}</th>
                         <td>{val}</td>
                         <td>{props.ProjectName[index]}</td>
