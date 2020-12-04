@@ -5,7 +5,7 @@ const Repourl = (props) => {
     var urls = null;
 
     urls = props.repourls.map((val, index) => {
-        return (<><div key={index}>
+        return (<div key={index}>
             <table className="table" >
                 {(index === 0) ?
                     <thead className="thead-dark" >
@@ -26,7 +26,7 @@ const Repourl = (props) => {
                 </tbody>
             </table>
         </div>
-        </>)
+        )
     })
 
     return (<>
