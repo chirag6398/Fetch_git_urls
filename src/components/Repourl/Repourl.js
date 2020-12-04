@@ -6,8 +6,8 @@ const Repourl = (props) => {
 
     urls = props.repourls.map((val, index) => {
         return (<>
-            <table className="table">
-                {(index == 0) ?
+            <table className="table" key={index}>
+                {(index === 0) ?
                     <thead className="thead-dark">
                         <tr>
                             <th scope="col">S.No.</th>
