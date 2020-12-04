@@ -33,7 +33,7 @@ export default class App extends Component {
     axios.get(`https://api.github.com/users/${repo_Name}/repos?per_page=5&sort=created:asc`)
       .then((res) => {
         res.data.map((val) => {
-          this.setState(() => {
+        return  this.setState(() => {
 
             return {
               repoUrls: [...this.state.repoUrls, val.git_url],
