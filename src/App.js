@@ -4,7 +4,7 @@ import Repourl from "./components/Repourl/Repourl";
 import Avatar from "./components/Avatar/Avatar"
 import axios from "axios";
 import "./App.css"
-import BIRDS from 'vanta/dist/vanta.rings.min';
+import BIRDS from 'vanta/dist/vanta.birds.min';
 
 export default class App extends Component {
   state = {
