@@ -3,6 +3,8 @@ import Fform from "./components/Fetch-form/Form";
 import Repourl from "./components/Repourl/Repourl";
 import Avatar from "./components/Avatar/Avatar"
 import axios from "axios";
+import "./App.css"
+import BIRDS from 'vanta/dist/vanta.rings.min';
 
 export default class App extends Component {
   state = {
@@ -11,6 +13,17 @@ export default class App extends Component {
     projectName: [],
     avatar: "",
   }
+  vantaRef = React.createRef();
+
+  componentDidMount() {
+    this.vantaEffect = BIRDS({
+      el: this.vantaRef.current
+    })
+  }
+  componentWillUnmount() {
+    if (this.vantaEffect) this.vantaEffect.destroy()
+  }
+
   stateHandler = (repo_Name) => {
     this.setState({ userName: repo_Name, repoUrls: [], projectName: [], avatar: "" });
 
@@ -39,16 +52,23 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
-
+     
+        <div ref={this.vantaRef}  >
+        <div >
         <Fform repoHandler={this.stateHandler} />
-        <Avatar url={this.state.avatar}
+    <div style={{position:"relative",top:"8vh"}}>
+    <Avatar url={this.state.avatar}
           user={this.state.userName}
         />
         <Repourl repourls={this.state.repoUrls}
           ProjectName={this.state.projectName}
         />
-      </div>
+    </div>
+      
+    </div>
+    </div>
+       
+     
     )
   }
 }
